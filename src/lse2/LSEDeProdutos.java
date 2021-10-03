@@ -160,14 +160,7 @@ public class LSEDeProdutos {
         }
     
     }
-    
-    public void alterarDados(){
-        
-    }
-    
-    
-    
-    
+
     
 }    
     
