@@ -26,6 +26,7 @@ public class Lse2 {
             System.out.println("5 – Exibir todos os produtos da lista");
             System.out.println("6 – Exibir os dados de um produto da lista");
             System.out.println("7 – Alterar os dados de um produto da lista");
+            System.out.println("8 - Remover produto através do código");
             System.out.println("0 – Sair do programa");
             resp = input.nextInt();
             switch(resp){
@@ -85,7 +86,10 @@ public class Lse2 {
                     break;
             case 7:
                     break;
-                
+            case 8:        
+                   System.out.println("Informe o Código do Produto que deseja remover");
+                   codigonovo = input.next();
+                   listadeprodutos.removerProdutoCod(codigonovo);
             }
             
             

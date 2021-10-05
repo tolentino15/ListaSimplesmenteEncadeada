@@ -162,13 +162,44 @@ public class LSEDeProdutos {
     }
 
     
-}    
-    
-    
-    
-    
-    
-    
+    public void removerProdutoCod(String code) {
+        LSENode aux, auxAnterior;
+        boolean achou = false;
 
+        if (this.isEmpty() == true) {
+            System.out.println("Lista vazia!");
+        } else { // Lista não vazia
+            aux = this.primeiro;
+            if (aux.getInfo().getCodigo().compareTo(code) == 0) { // Comparar com o primeiro
+                this.primeiro = aux.getProx();
+                if (this.primeiro == null) { // Se a lista ficou vazia APÓS a remoção
+                    this.ultimo = null;
+                }
+                System.out.println("Remoção efetuada!");
+            } else { 
+                auxAnterior = aux;
+                aux = aux.getProx();
+                while (aux != null) {
+                    if (aux.getInfo().getCodigo().compareTo(code) == 0) {
+                        auxAnterior.setProx(aux.getProx());
+                        System.out.println("Remoção efetuada!");
+                        if (aux == this.ultimo) {
+                            this.ultimo = auxAnterior;
+                        }
+                        achou = true;
+                        break;
+                    } else {
+                        auxAnterior = aux;
+                        aux = aux.getProx();
+                    }
+                }
+                if (achou == false) {
+                    System.out.println("Valor não encontrado!");
+                }
+            }
+        }
+    }
     
+    
+}    
 

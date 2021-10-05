@@ -17,6 +17,10 @@ public class Produto {
         this.estoque = estoque;      
     }
     
+    public Produto (String codigo){
+        this.codigo = codigo;
+    }
+    
     //GET CODIGO
     public String getCodigo() {
         return this.codigo;
